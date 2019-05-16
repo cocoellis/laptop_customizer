@@ -1,22 +1,17 @@
-import React, { Component } from 'react';
-import Features from './Features';
+import React from 'react';
+import FeatureList from './FeatureList';
 
-function MainForm(props) {
-    return (
-      <div>
-        <section className="main__form">
-            <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
-            <Features
-              features={props.features}
-              handleUpdate={props.handleUpdate}
-              selected={props.selected}
-              />
-          </section>
-      </div>
-    )
-  }
+const MainForm = ({ title, features, selected, updateFeature }) => {
+  return (
+    <section className='main__form'>
+      <h4>{title}</h4>
+      <FeatureList
+        features={features}
+        selected={selected}
+        updateFeature={updateFeature}
+      />
+    </section>
+  );
+};
 
-export default MainForm
-
-
-
+export default MainForm;
